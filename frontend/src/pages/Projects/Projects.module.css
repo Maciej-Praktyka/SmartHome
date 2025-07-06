@@ -1,0 +1,9 @@
+.projects{
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(20rem, 1fr));
+  grid-column-gap: 3rem;
+  grid-row-gap: 1rem;
+  padding: 1rem;
+  width: 90%;
+  margin: auto;
+}

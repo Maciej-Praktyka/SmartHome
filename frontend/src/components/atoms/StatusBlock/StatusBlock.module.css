@@ -1,0 +1,71 @@
+.statusBlock {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  color: var(--text-color-primary);
+  transition: text-shadow 0.3s ease;
+}
+
+.statusDot {
+  border-radius: 50%;
+  color: gray;
+  box-shadow: 0 0 6px gray;
+  animation: glowPulse 2s infinite alternate;
+  flex-shrink: 0;
+}
+
+/* Status-specific colors and animations */
+.statusBlock[data-status="Working"] .statusDot {
+  color: #4caf50; /* green */
+  box-shadow: 0 0 8px #4caf50;
+  animation: glowPulse 2s infinite alternate;
+}
+.statusBlock[data-status="Working"] .statusText {
+  color: #4caf50; /* green */
+}
+
+.statusBlock[data-status="Out of Service"] .statusDot {
+  color: #cc0000; /* red */
+  box-shadow: 0 0 8px #cc0000;
+  animation: none; /* no pulse */
+}
+.statusBlock[data-status="Out of Service"] .statusText {
+  color: #cc0000; /* red */
+}
+
+.statusBlock[data-status="In Development"] .statusDot {
+  color: #2196f3; /* blue */
+  box-shadow: 0 0 8px #2196f3;
+  animation: glowPulse 1.5s infinite alternate;
+}
+.statusBlock[data-status="In Development"] .statusText {
+  color: #2196f3; /* blue */
+}
+
+.statusBlock[data-status="Error"] .statusDot {
+  color: #ff9800; /* orange */
+  box-shadow: 0 0 8px #ff9800;
+  animation: glowPulse 2.5s infinite alternate;
+}
+.statusBlock[data-status="Error"] .statusText {
+  color: #ff9800; /* orange */
+}
+
+/* Text glow for all statuses */
+.statusBlock[data-status] .statusText {
+  text-shadow:
+    0 0 5px currentColor,
+    0 0 10px currentColor,
+    0 0 20px currentColor;
+  transition: text-shadow 0.3s ease;
+}
+
+/* Pulse animation */
+@keyframes glowPulse {
+  0% {
+    box-shadow: 0 0 4px 2px currentColor;
+  }
+  100% {
+    box-shadow: 0 0 8px 4px currentColor;
+  }
+}

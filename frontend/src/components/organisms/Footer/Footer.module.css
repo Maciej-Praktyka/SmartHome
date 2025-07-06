@@ -1,0 +1,33 @@
+/* Footer.module.css */
+.footer {
+  background-color: var(--background-color-secondary);
+  padding: 2rem 1rem;
+  color: var(--text-color-secondary);
+  font-size: 0.875rem;
+  text-align: center;
+  border-top: 1px solid rgba(255, 255, 255, 0.05);
+}
+
+.content {
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+.links {
+  margin-top: 0.5rem;
+  display: flex;
+  justify-content: center;
+  gap: 1.5rem;
+  flex-wrap: wrap;
+}
+
+.links a {
+  color: var(--accent-color-secondary);
+  text-decoration: none;
+  transition: color 0.2s;
+}
+
+.links a:hover {
+  color: var(--accent-color-primary);
+  text-shadow: 0 0 6px var(--accent-color-primary);
+}
